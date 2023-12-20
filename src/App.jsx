@@ -1,6 +1,11 @@
 import { ThemeProvider } from '@emotion/react';
-import { AppBar, Button, createTheme, CssBaseline, Link, Toolbar, Typography, SvgIcon } from '@mui/material';
+import { AppBar, IconButton, createTheme, CssBaseline, Link, Toolbar, Typography, SvgIcon } from '@mui/material';
 import { useMemo, useState } from 'react';
+import { DarkMode, LightMode } from '@mui/icons-material';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
 function App() {
   const localTheme = localStorage.getItem("user-theme");
@@ -65,9 +70,9 @@ function App() {
               LilypadVR Firmware Tool
             </Link>
           </Typography>
-          <Button variant="outlined" onClick={toggleTheme}>
-            {prefersDarkMode ? "Dark" : "Light"}
-          </Button>
+          <IconButton variant="contained" onClick={toggleTheme}>
+            {prefersDarkMode ? <DarkMode fontSize="small"/> : <LightMode fontSize="small"/>}
+          </IconButton>
         </Toolbar>
       </AppBar>
     </ThemeProvider>
