@@ -1,7 +1,10 @@
 import { ThemeProvider } from '@emotion/react';
-import { AppBar, IconButton, createTheme, CssBaseline, Link, Toolbar, Typography, SvgIcon } from '@mui/material';
+import { AppBar, IconButton, createTheme, CssBaseline, Link, Toolbar, Typography, SvgIcon, Container, Paper } from '@mui/material';
 import { useMemo, useState } from 'react';
 import { DarkMode, LightMode } from '@mui/icons-material';
+
+import FirmwareTool from './FirmwareTool.jsx';
+
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
@@ -75,6 +78,12 @@ function App() {
           </IconButton>
         </Toolbar>
       </AppBar>
+        <Container component="main" maxWidth="md" sx={{ my: 3 }}>
+          <Paper variant="outlined" sx={{ my: { xs: 3, md: 3 }, p: { xs: 1, md: 3 } }}>
+            <FirmwareTool/>
+          </Paper>
+        </Container>
+
     </ThemeProvider>
   )
 }
